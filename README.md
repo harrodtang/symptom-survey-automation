@@ -19,5 +19,5 @@ Run the command: python src/app.py.
 
 From there, a GUI popup will prompt for your Kerberos username, password, and whether or not you have any new symptoms or concerns regarding COVID.
 
-## Things to note
-At the current momemnt, 2FA via Duo appears to be pretty difficult to automate. Running the script multiple times in a short period of time (ie. approximately 1 minute) may not trigger the "Send a Push" button in Duo. To bypass this issue, ensure that you "Refresh Passcode" in your Duo application.
+## Things to note/TODO
+At the current momemnt, 2FA via Duo appears to be pretty difficult to automate. Running the script multiple times in a short period of time (ie. approximately 1 minute) may not trigger the "Send a Push" button in Duo. Waiting at least a minute between successive runs of the script seems to solve the issue. 

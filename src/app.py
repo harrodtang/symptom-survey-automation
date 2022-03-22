@@ -37,7 +37,7 @@ login_button.click()
 iframe = driver.find_element_by_xpath("//iframe[@id='duo_iframe']")
 driver.switch_to.frame(iframe) # switching to Duo iframe
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[starts-with(@class, 'auth-button') and contains(., 'Send Me a Push')]"))).click()
-driver.switch_to.default_content() # switching out of iframe
+# driver.switch_to.default_content() # switching out of iframe
 
 # Davis HEM
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='ctl03']/div[2]/div/a"))).click()
@@ -59,3 +59,5 @@ q6 = driver.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[7]/fieldset
 q6.click()
 submit_survey = driver.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input')
 submit_survey.click()
+
+driver.quit() # closing the browser and ends WebDriver session
