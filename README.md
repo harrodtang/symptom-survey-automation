@@ -1,7 +1,9 @@
 # Symptom Survey Automation
 
 ## About
-This simple python script automates the process of filling out UC Davis' symptom survey. Typically, one would be redirected through 6 or 7 webpages before reaching the actual symptom survey. Redirecting the user through these pages requires them to login to their UC Davis CAS account, click through multiple buttons, and perform 2FA with Duo.
+This simple python script was intended to help me familiarize myself with Python automation, libraries such as Selenium, and a bit of web scraping.
+
+This script automates the process of filling out UC Davis' symptom survey. Typically, one would be redirected through 6 or 7 webpages before reaching the actual symptom survey. Redirecting the user through these pages requires them to login to their UC Davis CAS account, click through multiple buttons, and perform 2FA with Duo.
 
 As one can see, performing this everyday can get redundant and tedious. With this script, all the user needs to do is: enter their Kerberos username and password, indicate whether or not they have any symptoms or concerns (a simple yes/no), and perform 2FA with Duo.
 
