@@ -3,10 +3,18 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import tkinter as tk
+from tkinter import simpledialog
+from tkinter import messagebox as mb
 
 # user input
-symptoms_exist = input("Do you have any symptoms or concerns? (y/n): ")
-if symptoms_exist == "y" or symptoms_exist == "Y":
+tkinter_root = tk.Tk()
+tkinter_root.withdraw()
+tkinter_root.geometry('640x380')
+username = simpledialog.askstring(title="Kerberos", prompt="UCD Kerberos")
+password = simpledialog.askstring(title="Kerberos", show="*", prompt="Kerberos Password")                            
+symptoms_exist = mb.askyesno(title="Symptoms or Concerns", message="Do you have current symptoms or concerns regarding COVID?")
+if symptoms_exist:
     quit()
 
 # chrome driver
@@ -19,9 +27,9 @@ survey_button.click()
 
 # cas.ucdavis login
 username_field = driver.find_element_by_xpath('//*[@id="username"]')
-username_field.send_keys("<user_name>")
+username_field.send_keys(username)
 password_field = driver.find_element_by_xpath('//*[@id="password"]')
-password_field.send_keys("<password>")
+password_field.send_keys(password)
 login_button = driver.find_element_by_xpath('//*[@id="submit"]')
 login_button.click()
 
@@ -51,4 +59,3 @@ q6 = driver.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[7]/fieldset
 q6.click()
 submit_survey = driver.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input')
 submit_survey.click()
-
